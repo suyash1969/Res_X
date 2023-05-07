@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* body styles */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+/* container styles */
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px #ccc;
+  padding: 20px;
+}
+
+/* left side styles */
+.left {
+  flex-basis: 30%;
+}
+
+.profile-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.box-1 {
+  margin-top: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.box-1:last-of-type {
+  border: none;
+}
+
+.heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.p1 {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.icons1 {
+  font-size: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.skill-container {
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.skill {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  margin-right: 2px;
+}
+
+.html {
+  background-color: #f1646c;
+}
+
+.box-1:nth-child(2) {
+  margin-top: 40px;
+}
+
+.box-1:nth-child(4) {
+  margin-top: 40px;
+}
+
+/* right side styles */
+.right {
+  flex-basis: 65%;
+}
+
+.name-div {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 0;
+}
+
+.name-div p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.box-2 {
+  margin-top: 30px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+}
+
+.box-2:last-of-type {
+  border: none;
+}
+
+.icons3 {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.p2 {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.p3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.p3 span {
+  font-size: 16px;
+  margin-left: 10px;
+  color: #666;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+.main {
+max-width: 100%;
+flex-direction: column;
+box-shadow: none;
+padding: 10px;
+}
+
+.left {
+flex-basis: 100%;
+margin-bottom: 20px;
+}
+
+.right {
+flex-basis: 100%;
+}
+
+.box-1,
+.box-2 {
+margin: 0;
+border: none;
+padding: 0;
+}
+
+.profile-img img {
+margin-bottom: 20px;
+}
+
+h1 {
+font-size: 28px;
+}
+
+h2 {
+font-size: 20px;
+}
+}
+
+/* additional styles for print */
+@media print {
+body {
+background-color: #fff;
+}
+
+.main {
+box-shadow: none;
+}
+
+.left {
+margin-bottom: 0;
+}
+
+.name-div {
+page-break-inside: avoid;
+}
+}
+
+    </style>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    
+<div class="main">
+	<div class="left">
+		<br>
+		 <div class="profile-img">
+  		<img src="../../uploads/{{data._id}}" alt="Profile Picture" />
+		
+		</div>
+		{{!-- <div class="profile-img"><img src="/images/{{data.imagec.contentType}}.jpg"></div> --}}
+
+		<div class="box-1">
+			<div class="heading">
+				<p>CONTACT</p>
+			</div>
+			<p class="p1"><i class="material-icons icons1">call</i>{{data.phonec}}</p>
+			<p class="p1"><i class="material-icons icons1">email</i>{{data.emailc}}</p>
+		</div>
+
+		<div class="box-1">
+			<div class="heading">
+				<p>HOBBIES</p>
+			</div>
+			 {{#each data.hobby1}}
+			<p class="p1">{{this}}
+			<div class="skill-container">
+				<div class="skill html"></div>
+			</div>
+
+			</p>
+ {{/each}}
+			
+		</div>
+		<div class="box-1">
+			<div class="heading">
+				<p>Job location</p>
+			</div>
+			
+			<p class="p1"><i class="material-icons icons1">location_on</i>{{data.locationc}}
+				
+			
+			</p>
+
+			
+		</div>
+		<div class="box-1">
+			<div class="heading">
+				<p>College-name</p>
+			</div>
+			
+			<p class="p1"><i class="material-icons icons1">home</i>{{data.collegec}}
+				
+			</p>
+		</div>
+	
+
+		<br>
+
+		<div class="box-1">
+			<div class="heading">
+				<p>SKILLS</p>
+			</div>
+			{{#each data.skill1}}
+			<p class="p1">{{this}}
+			<div class="skill-container">
+				<div class="skill web"></div>
+			</div>
+			</p>
+			 {{/each}}
+		</div>
+		<br>
+		
+
+	</div>
+
+
+	<div class="right">
+		<div class="name-div">
+			<h1>{{ data.namec}}</h1>
+			<p>{{data.streamc}}</p>
+		</div>
+
+		<div class="box-2">
+			<h2>ABOUT YourSelf <i class="material-icons icons3" style="font-size: 28px!important; ">perm_identity</i></h2>
+			<p class="p2">
+				{{data.about}}
+			</p>
+		</div>
+
+
+
+		<div class="box-2">
+			<h2>EDUCATION <i class="material-icons icons3" >border_color</i></h2>
+			 {{#each data.education as |education index|}}
+			 {{#each education.year1 as |kamm kam|}}
+			<p class="p3">{{lookup education.year1 kam}}<span>{{lookup education.school kam}}&ensp; = {{lookup education.class kam}}</span></p>
+			<p class="p2">
+				{{lookup education.marks kam}}
+			</p>
+			 {{/each}}
+	{{/each}}
+		</div>
+	
+
+
+<div class="box-2">
+  <h2>PROJECTS<i class="material-icons icons3">folder</i></h2>
+  {{#each data.project as |project index|}}
+  {{#each project.projecttitle1 as |kamm kam|}}
+  <ul>
+    <li>
+      <p class="p3">{{lookup project.projecttitle1 kam}}</p>
+        <p class="p2">{{lookup project.projectdescription1 kam}}</p>	
+    </li>
+  </ul>
+  {{/each}}
+{{/each}}
+</div>
+
+
+
+		<div class="box-2">
+			<h2>WORK EXPERIENCE <i class="material-icons icons3" >folder</i></h2>
+			{{#each data.experience as |experience index|}}
+			{{#each experience.year as |kamm kam|}}
+			<p class="p3">{{lookup experience.year kam}}<span>{{lookup experience.company kam}}</span></p>
+			<p class="p2">
+				{{lookup experience.desc kam}}
+			</p>
+
+ 		{{/each}}
+		{{/each}}
+			
+		</div>
+
+	</div>
+</div>
+
+</body>
+</html>

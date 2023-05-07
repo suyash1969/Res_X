@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS + icon cdn  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Icon -->
+    <link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> <!-- Also Works for icons -->
+
+
+    <!-- Google Font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="one.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-CjKcTavw1QgDbL4yM4rXlNk/irB2IjgKvJuP/zCxeiJ+q3KjE1FvHKp6XBB1GmKRc6o5m6E5yk5DzOT5o5wIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js"></script>
+    <style>
+        
+     
+  .footer {
+    background-color: #222;
+    color: #fff;
+    padding: 50px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .footer-logo img {
+    height: 50px;
+  }
+
+  .footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-nav li {
+    margin: 0 20px;
+  }
+
+  .footer-nav a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer-social ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-social li {
+    margin: 0 10px;
+  }
+
+  .footer-social a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  .footer-social a:hover {
+    color: #ccc;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+  }
+
+
+    </style>
+
+    <title>resX</title>
+  </head>
+  <body>
+
+    <!-- Navbar Section -->
+
+    <nav id="navigation" class="navbar navbar-expand-lg fixed-top">
+        <div class="container align-items-stretch">
+            <div class="logo"><a class="navbar-brand" href="#">ResX</a></div>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="./about">About-Us</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="./create">Create</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./contact">Contact</a>
+                </li>
+                  {{#if loginButton}}
+                <li id="get-started" class="nav-item">
+                    <a class="nav-link" href="./register" id="change" >Login / Sign Up</a>
+                  
+                </li>
+                   {{/if}}
+                    {{#if logoutButton}}
+                    <li id="get-started" class="nav-item">
+                    <a href="../logout" class="nav-link"><input type="submit" value="Logout" class="btn solid" id="logout"/></a>
+                    </li>
+                    {{/if}}
+
+            </ul>
+            </div>
+        </div>
+      </nav>
+
+    <!-- Navbar Section End -->
+
+
+    <!--Banner Section-->
+
+     <section id="hero" class="d-flex align-items-center">
+        <div class="container text-center" >
+            <h1>Welcome to resX</h1>
+            <h2>Here we will create your resume</h2>
+            <a href="#" class="btn_get_started">Get Started</a>
+        </div>
+    </section>
+
+    <!--Banner Section end-->
+
+
+    <!--Client Section-->
+
+    {{!-- <section class="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center text-center">
+                    <img src="./clients/1.png" class="img-fluid" alt="client 1">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center text-center">
+                    <img src="./clients/2.png" class="img-fluid" alt="client 1">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center text-center">
+                    <img src="./clients/3.png" class="img-fluid" alt="client 1">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center text-center">
+                    <img src="./clients/4.png" class="img-fluid" alt="client 1">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center text-center">
+                    <img src="./5.png" class="img-fluid" alt="client 1">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center text-center">
+                    <img src="./clients/6.png" class="img-fluid" alt="client 1">
+                </div>
+            </div>
+        </div>
+    </section> --}}
+
+    <!--Client Section end-->
+
+    <!--About Section -->
+
+    <section class="about">
+        <div class="container">
+            <div class="row content">
+                <div class="col-lg-6">
+                    <h2>Build your future with resX - the ultimate tool for creating a standout resume!</h2>
+                    <h3>resX</h3>
+                </div >
+                <div class="col-lg-6 pt-4 pt-lg-0">
+                    <p>ResX is an innovative resume-building website that offers a user-friendly interface, customizable resume templates, and helpful writing guidance. With ResX, users can create professional and personalized resumes that stand out to potential employers. ResX also provides features for account management, collaboration, feedback, and integration with job sites, making the resume-building process seamless and efficient. With ResX, users can rest assured that their data is kept secure and private. Whether you're a recent graduate, job seeker, or seasoned professional, ResX is the perfect solution to help you land your dream job. </p>
+                    <ul>
+                        <li>
+                            <p>=>User Account Management: Your website should allow users to create an account, save their resumes, and edit them at any time but in future.</p>
+                        </li>
+                        <li>
+                            <p>=>Data Privacy and Security: Your website should take appropriate measures to ensure the privacy and security of user data, including encryption and secure server storage. </p>
+                        </li>
+                       
+                    </ul>
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About Section End -->
+
+    <!--Counter Section -->
+
+    <section class="counts">
+        <div class="container">
+            <div class="row counters">
+                <div class="col-lg-3 col-6 text-center">
+                    <span>5</span>
+                    <p>Clients</p>
+                </div>
+                <div class="col-lg-3 col-6 text-center">
+                    <span>4</span>
+                    <p>Template  </p>
+                </div>
+                <div class="col-lg-3 col-6 text-center">
+                    <span>0</span>
+                    <p>Hours</p>
+                </div>
+                <div class="col-lg-3 col-6 text-center">
+                    <span>5</span>
+                    <p>Employess</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Counter Section End -->
+
+    <!--Why Us Section -->
+
+    <section class="why_us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="content">
+                        <h3>Feedback</h3>
+                        <p>We'd love to hear your feedback on our website! Please take a moment to share your thoughts and suggestions with us.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-8 d-flex align-items-stretch">
+                    <div class="icon_boxes d-flex flex-column justify-content-center">
+                        <div class="row">
+                            <div class="col-xl-4 d-flex align-items-stretch">
+                                <div class="icon_box mt-4 mt-xl-0">
+                                    <i class="fa fa-id-card-o "></i>
+                                        <h4>Welcome to resX</h4>
+                                        <p>I found the website very easy to navigate, and the resume templates were visually appealing and professional-looking </p>
+
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="col-xl-4 d-flex align-items-stretch">
+                                <div class="icon_box mt-4 mt-xl-0">
+                                    <i class="fa fa-id-card-o"></i>
+                                        <h4>Welcome to resX</h4>
+                                        <p>I had some difficulty uploading my existing resume to the site, but the customer support team was very responsive and helped me resolve the issue quickly. Overall, I am happy with the quality of the resume I was able to create using resX </p>
+                                        
+                                    
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 d-flex align-items-stretch">
+                                <div class="icon_box mt-4 mt-xl-0">
+                                    <i class="fa fa-id-card-o"></i>
+                                        <h4>Welcome to resX</h4>
+                                        <p>The integration with job sites was very convenient, as I was able to easily submit my resume to multiple job postings with just a few clicks.  </p>
+                                        
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Why Us Section End -->
+
+    <!--Cta Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="text-center">
+                    <h3>Call to Feedback</h3>
+                    <p>We're always looking to improve our website, and your feedback can help us do that. Please share your thoughts with us..</p>
+                    <a href="#" class="cta_btn">Click Here</a>
+                </div>
+            </div>
+        </section>
+    <!--Cta Section End -->
+
+
+    <!-- Team Section -->
+
+        <section class="team">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="section_title">
+                            <h2>Team</h2>
+                            <p>Teamwork is essential for achieving success, as it enables individuals to combine their skills, knowledge, and expertise to accomplish goals that would be difficult or impossible to achieve alone.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="member">
+                                    {{!-- <div class="pic">
+                                        <img src="./images/test/t2.jpeg" class="img-fluid" alt="user">
+                                    </div> --}}
+                                    <div class="member_info">
+                                        <h4>Apoorv</h4>
+                                        <div class="social">
+                                            <a href="#"> <i class="fa fa-facebook"></i> </a>
+                                            <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                                            <a href="#"> <i class="fa fa-instagram"></i> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 mt-4 mt-lg-0">
+                                <div class="member">
+                                    {{!-- <div class="pic">
+                                        <img src="./images/test/t3.jpeg" class="img-fluid" alt="user">
+                                    </div> --}}
+                                    <div class="member_info">
+                                        <h4>Suyash</h4>
+                                        <div class="social">
+                                            <a href="#"> <i class="fa fa-facebook"></i> </a>
+                                            <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                                            <a href="#"> <i class="fa fa-instagram"></i> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 mt-4">
+                                <div class="member">
+                                    {{!-- <div class="pic">
+                                        <img src="./images/test/t4.jpeg" class="img-fluid" alt="user">
+                                    </div> --}}
+                                    <div class="member_info">
+                                        <h4>Nishant</h4>
+                                        <div class="social">
+                                            <a href="#"> <i class="fa fa-facebook"></i> </a>
+                                            <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                                            <a href="#"> <i class="fa fa-instagram"></i> </a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mt-4">
+                                <div class="member">
+                                    {{!-- <div class="pic">
+                                        <img src="./images/test/t4.jpeg" class="img-fluid" alt="user">
+                                    </div> --}}
+                                    <div class="member_info">
+                                        <h4>Bhoomi</h4>
+                                        <div class="social">
+                                            <a href="#"> <i class="fa fa-facebook"></i> </a>
+                                            <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                                            <a href="#"> <i class="fa fa-instagram"></i> </a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                             <div class="col-lg-6 mt-4">
+                                <div class="member">
+                                    {{!-- <div class="pic">
+                                        <img src="./images/test/t4.jpeg" class="img-fluid" alt="user">
+                                    </div> --}}
+                                    <div class="member_info">
+                                        <h4>Ritu</h4>
+                                        <div class="social">
+                                            <a href="#"> <i class="fa fa-facebook"></i> </a>
+                                            <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                                            <a href="#"> <i class="fa fa-instagram"></i> </a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Team Section End -->
+
+    <!-- Contact Section -->
+<footer class="footer">
+  <div class="footer-content">
+    {{!-- <div class="footer-logo">
+      <img src="images/resX-logo.png" alt="resX logo">
+    </div> --}}
+    <div class="footer-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Resume Templates</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    {{!-- <div class="footer-social">
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div> --}}
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2023 ResX. All rights reserved.</p>
+  </div>
+</footer>
+
+       
+
+    <!-- Contact Section End -->
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+  </body>
+</html>
